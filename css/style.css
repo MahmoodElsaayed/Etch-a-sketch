@@ -8,3 +8,10 @@ body {
     background-color: rgba(0, 0, 53, 0.1);
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.header {
+    margin: 25px 0px 35px 0px;
+    font-size: 85px;
+    font-weight: 700;
+    text-align: center;
+}
