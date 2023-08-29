@@ -1,16 +1,16 @@
 // SKETCH BOARD SETUP
 // Create a grid of cells on the sketch board
-function createGrid(cellCount) {
+function createGrid(cellsPerRow) {
     const sketchBoard = document.querySelector(".sketch-board");
-    const cellDimension = Math.sqrt(sketchBoard.clientHeight ** 2 / cellCount);
-    for (let i = 0; i < cellCount; i++) {
+    const cellDimension = sketchBoard.clientWidth / cellsPerRow;
+    for (let i = 0; i < cellsPerRow ** 2; i++) {
         const cell = document.createElement("div");
         cell.classList.add("cell");
         cell.style.cssText = `background-color: white; width: ${cellDimension}px; height: ${cellDimension}px;`;
         sketchBoard.appendChild(cell);
     }
 }
-createGrid(16 * 16); // Create the default grid
+createGrid(16); // Create the default grid
 
 // MODE SELECTION BUTTONS
 const modesButtons = document.querySelectorAll(".btn");
@@ -68,7 +68,6 @@ const sliderPara = document.querySelector(".slider-text");
 slider.addEventListener("input", () => {
     const gridCells = document.querySelectorAll(".cell");
     gridCells.forEach(cell => cell.remove());
-    const gridSize = slider.value * slider.value;
-    createGrid(gridSize);
+    createGrid(slider.value);
     sliderPara.textContent = `${slider.value} x ${slider.value}`;
 });
