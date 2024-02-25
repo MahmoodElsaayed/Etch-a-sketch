@@ -2,11 +2,10 @@
 // Create a grid of cells on the sketch board
 function createGrid(cellsPerRow) {
     const sketchBoard = document.querySelector(".sketch-board");
-    const cellDimension = sketchBoard.clientWidth / cellsPerRow;
+    sketchBoard.style.cssText = `grid-template: repeat(${cellsPerRow}, 1fr) / repeat(${cellsPerRow}, 1fr)`;
     for (let i = 0; i < cellsPerRow ** 2; i++) {
         const cell = document.createElement("div");
         cell.classList.add("cell");
-        cell.style.cssText = `background-color: white; width: ${cellDimension}px; height: ${cellDimension}px;`;
         sketchBoard.appendChild(cell);
     }
 }
