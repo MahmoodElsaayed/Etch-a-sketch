@@ -70,3 +70,7 @@ slider.addEventListener("input", () => {
     createGrid(slider.value);
     sliderPara.textContent = `${slider.value} x ${slider.value}`;
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    slider.value = slider.defaultValue;;
+})
