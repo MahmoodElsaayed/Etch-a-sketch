@@ -69,6 +69,11 @@ body {
     border: none;
 }
 
+.color-wheel::-moz-color-swatch {
+    border-radius: 40px;
+    border: none;
+}
+
 .btn {
     width: 180px;
     padding: 10px 20px;
@@ -116,9 +121,9 @@ body {
   }
   
   .slider::-moz-range-thumb {
-    width: 25px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    background: #333333;
+    background: #000000;
     cursor: pointer;
   }
